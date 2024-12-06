@@ -1,7 +1,7 @@
 {
   description = "Dev Env for local hosted postgreSQL";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
   outputs = { self, nixpkgs }:
     let
@@ -13,7 +13,7 @@
       devShells.x86_64-linux = {
         default = pkgs.mkShell {
           buildInputs = [
-            pkgs.postgreSQL
+            pkgs.postgresql
             pkgs.nodejs_23
           ];
           
