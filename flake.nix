@@ -1,26 +1,22 @@
 {
-  description = "Dev Env for local hosted postgreSQL";
-
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-
-  outputs = { self, nixpkgs }:
+  description = "Rust flake";
+  inputs =
+    {
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11"; # or whatever vers
+    };
+  
+  outputs = { self, nixpkgs, ... }@inputs:
     let
-      pkgs = import nixpkgs {
-        system = "x86_64-linux";
-      };
+     system = "x86_64-linux"; # your version
+     pkgs = nixpkgs.legacyPackages.${system};    
     in
     {
-      devShells.x86_64-linux = {
-        default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.postgresql
-            pkgs.nodejs_23
-          ];
-          
-          shellHook = ''
+      devShells.${system}.default = pkgs.mkShell
+      {
+        packages = with pkgs; [ rustc cargo ]; # whatever you need
+        shellHook = ''
             echo "Environment Ready"
           '';
-        };
       };
     };
 }
