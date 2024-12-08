@@ -16,8 +16,6 @@
         packages = with pkgs; 
         [ 
           rustup
-          rustc
-          cargo
           postgresql
           trunk
         ];
