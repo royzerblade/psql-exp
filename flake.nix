@@ -13,7 +13,13 @@
     {
       devShells.${system}.default = pkgs.mkShell
       {
-        packages = with pkgs; [ rustc cargo ]; # whatever you need
+        packages = with pkgs; 
+        [ 
+          rustc
+          cargo
+          postgresql
+        ];
+        
         shellHook = ''
             echo "Environment Ready"
           '';
