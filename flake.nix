@@ -15,11 +15,13 @@
       {
         packages = with pkgs; 
         [ 
+          rustup
           rustc
           cargo
           postgresql
+          trunk
         ];
-        
+
         shellHook = ''
             echo "Environment Ready"
           '';
