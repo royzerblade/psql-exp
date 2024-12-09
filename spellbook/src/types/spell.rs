@@ -1,17 +1,15 @@
-use shapes::Shapes;
-use stats::Stats;
+use crate::types::shapes::Shapes;
+use crate::types::stats::Stats;
 
-mod shapes;
-mod stats;
-
+#[derive(Clone, Eq, PartialEq)]
 pub struct Spell {
-    description: String,
-    savingThrowType: Stats,
-    damageType: String,
-    damage: String,
-    shape: Shapes,
-    areaAffected: String,
-    range: String,
-    duration: String,
-    isConcentration: bool,
+    pub description: String,
+    pub saving_throw_type: Stats,
+    pub damage_type: String,
+    pub damage: String,
+    pub shape: Shapes,
+    pub area_affected: String,
+    pub range: String,
+    pub duration: String,
+    pub is_concentration: bool,
 }

@@ -1,8 +1,10 @@
-use components::navbar::Navbar;
+use crate::components::navbar::Navbar;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
 mod components;
+mod pages;
+mod types;
 
 #[derive(Clone, Routable, PartialEq)]
 enum MainRoute {

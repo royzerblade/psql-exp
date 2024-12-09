@@ -1,7 +1,5 @@
+use crate::types::spell::Spell;
 use yew::prelude::*;
-
-mod spell;
-use types::spell::Spell;
 
 #[derive(Clone, Eq, PartialEq, Properties)]
 pub struct PassedProps {
@@ -11,6 +9,6 @@ pub struct PassedProps {
 #[function_component(Spellcard)]
 pub fn spellcard(props: &PassedProps) -> Html {
     html! {
-      <div>{props.spell}</div>
+      <div>{props.spell.description.clone()}</div>
     }
 }
