@@ -27,7 +27,7 @@ fn switch_main(route: MainRoute) -> Html {
         MainRoute::Home => html! { <Home/> },
         MainRoute::Search => html! { <Search/> },
         MainRoute::Modify => html! { <Modify/> },
-        MainRoute::NotFound => html! {<h1>{"Not Found"}</h1>},
+        MainRoute::NotFound => html! {<h1>{"404: Page Not Found"}</h1>},
     }
 }
 
