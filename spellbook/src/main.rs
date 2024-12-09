@@ -1,4 +1,7 @@
 use crate::components::navbar::Navbar;
+use crate::pages::home::Home;
+use crate::pages::modify::Modify;
+use crate::pages::search::Search;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -21,9 +24,9 @@ enum MainRoute {
 
 fn switch_main(route: MainRoute) -> Html {
     match route {
-        MainRoute::Home => html! {<h1>{"Spellbook"}</h1>},
-        MainRoute::Search => html! {<h1>{"Search"}</h1>},
-        MainRoute::Modify => html! {<h1>{"Modify"}</h1>},
+        MainRoute::Home => html! { <Home/> },
+        MainRoute::Search => html! { <Search/> },
+        MainRoute::Modify => html! { <Modify/> },
         MainRoute::NotFound => html! {<h1>{"Not Found"}</h1>},
     }
 }
