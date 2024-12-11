@@ -17,6 +17,7 @@
         [ 
           rustup
           trunk
+          diesel-cli
         ];
 
         shellHook = ''
