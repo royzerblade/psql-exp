@@ -1,5 +1,7 @@
-#[derive(Clone, Eq, PartialEq)]
-pub struct Spell {
+use serde_derive::{Deserialize, Serialize};
+
+#[derive(Clone, Eq, PartialEq, Deserialize, Serialize)]
+pub struct QuerySpell {
     pub description: String,
     pub saving_throw_type: String,
     pub damage_type: String,

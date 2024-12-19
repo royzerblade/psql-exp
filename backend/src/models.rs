@@ -1,7 +1,7 @@
 use diesel::prelude::*;
 use serde_derive::{Deserialize, Serialize};
 
-#[derive(Queryable, Selectable, Insertable, Deserialize, Serialize, AsChangeset)]
+#[derive(Queryable, Selectable, Insertable, AsChangeset, Deserialize, Serialize)]
 #[diesel(table_name = crate::schema::spells)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct QuerySpell {

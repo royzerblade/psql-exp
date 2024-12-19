@@ -1227,7 +1227,8 @@ dependencies = [
 name = "shared"
 version = "0.1.0"
 dependencies = [
- "diesel",
+ "serde",
+ "serde_derive",
 ]
 
 [[package]]

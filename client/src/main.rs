@@ -5,6 +5,7 @@ use crate::pages::search::Search;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
+mod api;
 mod components;
 mod pages;
 

@@ -1,9 +1,9 @@
-use shared::types::spell::Spell;
+use shared::types::spell::QuerySpell;
 use yew::prelude::*;
 
 #[derive(Clone, Eq, PartialEq, Properties)]
 pub struct PassedProps {
-    pub spell: Spell,
+    pub spell: QuerySpell,
 }
 
 #[function_component(Spellcard)]

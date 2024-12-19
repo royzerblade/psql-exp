@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-diesel = { version = "2.2.0", features = ["postgres"] }
+serde = "1.0.216"
+serde_derive = "=1.0.216"
 
 [lib]
 crate-type = ["cdylib", "lib"]

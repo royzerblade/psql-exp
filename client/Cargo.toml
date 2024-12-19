@@ -8,3 +8,6 @@ web-sys = "0.3.76"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
 yew-router = { git = "https://github.com/yewstack/yew.git" }
 shared = { path = "../shared" }
+serde = "1.0.216"
+serde_derive = "=1.0.216"
+gloo-net = "0.6.0"
