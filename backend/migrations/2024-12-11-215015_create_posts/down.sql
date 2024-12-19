@@ -1,3 +1,1 @@
 DROP TABLE IF EXISTS spells;
-DROP TYPE IF EXISTS stats_enum;
-DROP TYPE IF EXISTS shapes_enum;
