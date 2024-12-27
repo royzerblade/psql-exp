@@ -1,15 +1,18 @@
 use crate::api::get::get;
 use shared::types::spell::QuerySpell;
-use yew::{platform::spawn_local, prelude::*};
+use yew::prelude::*;
 
 #[function_component(Search)]
 pub fn search() -> Html {
     let spell_list: UseStateHandle<Vec<QuerySpell>> = use_state(|| vec![]);
 
     let onclick = {
+        let spell_list = spell_list.clone();
         Callback::from(move |_| {
-            spawn_local(async move {
-                spell_list.set(get().await);
+            let spell_list = spell_list.clone();
+            wasm_bindgen_futures::spawn_local(async move {
+                let result = get().await;
+                spell_list.set(result);
             });
         })
     };
