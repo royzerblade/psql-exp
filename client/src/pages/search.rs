@@ -1,4 +1,5 @@
 use crate::api::get::get;
+use crate::components::spellcard::Spellcard;
 use shared::types::spell::QuerySpell;
 use yew::prelude::*;
 
@@ -29,7 +30,7 @@ pub fn search() -> Html {
         {search_button}
         <ul>
             { for spell_list.iter().map(|spell| html! {
-                <li>{ spell.description.clone() }</li>
+                <Spellcard spell={spell.clone()} />
             }) }
         </ul>
       </div>
