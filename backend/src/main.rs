@@ -1,18 +1,17 @@
-// main.rs
-// attaches the files in the package to the `main.rs` file
 mod connect;
 mod handlers;
 mod models;
 mod schema;
-// import the functionality for starting the server
-use actix_web::{web, App, HttpServer};
-// import the handler function
 use crate::handlers::{create_spell, delete_spell, read_spells, update_spell};
+use actix_cors::Cors;
+use actix_web::{web, App, HttpServer};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
+        let cors = Cors::default().allow_any_origin().send_wildcard();
         App::new()
+            .wrap(cors)
             .route("/create_spell", web::post().to(create_spell))
             .route("/read_spells", web::get().to(read_spells))
             .route("/update_spell/{id}", web::put().to(update_spell))
