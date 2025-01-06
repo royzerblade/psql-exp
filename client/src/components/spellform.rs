@@ -12,10 +12,10 @@ pub fn spellform() -> Html {
       <div>
         <h2>{"Spell Fields"}</h2>
         <form>
-          { for query_map.iter().map(|(key, value)| html! {
+          { for query_map.iter().map(|(key, _value)| html! {
             <div>
               <label for={key.clone()}>{format!("{}:", key.clone())}</label>
-              <input type="text" id={key.clone()} name={key.clone()}/><br/>
+              <input type="text" id={key.clone()} name={key.clone()} value={key.clone()}/><br/>
             </div>
           })}
         </form>
