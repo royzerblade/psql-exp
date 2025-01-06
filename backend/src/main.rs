@@ -9,7 +9,7 @@ use actix_web::{web, App, HttpServer};
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
-        let cors = Cors::default().allow_any_origin().send_wildcard();
+        let cors: Cors = Cors::default().allow_any_origin().send_wildcard();
         App::new()
             .wrap(cors)
             .route("/create_spell", web::post().to(create_spell))
