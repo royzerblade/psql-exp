@@ -20,7 +20,7 @@ pub async fn post(input_spell: QuerySpell) {
 
     match Request::post(&url)
         .header("Content-Type", "application/json")
-        .body("{\"description\":\"\",\"saving_throw_type\":\"\",\"damage_type\":\"\",\"damage\":\"\",\"shape\":\"\",\"area_affected\":\"\",\"range\":\"\",\"duration\":\"\",\"is_concentration\":false}")
+        .body(body)
         .unwrap()
         .send()
         .await
