@@ -8,7 +8,7 @@ pub async fn post(input_spell: QuerySpell) {
     dotenv().ok();
     let base_url = env::var("BASE_URL").unwrap_or_else(|_| "http://127.0.0.1:3000".to_string());
     // let base_url: String = env::var("BASE_URL").expect("BASE_URL must be set");
-    let url = format!("{}/read_spells", base_url);
+    let url = format!("{}/create_spell", base_url);
 
     let body = match serde_json::to_string(&input_spell) {
         Ok(json) => json,
@@ -18,10 +18,9 @@ pub async fn post(input_spell: QuerySpell) {
         }
     };
 
-    // Make the POST request
     match Request::post(&url)
         .header("Content-Type", "application/json")
-        .body(body)
+        .body("{\"description\":\"\",\"saving_throw_type\":\"\",\"damage_type\":\"\",\"damage\":\"\",\"shape\":\"\",\"area_affected\":\"\",\"range\":\"\",\"duration\":\"\",\"is_concentration\":false}")
         .unwrap()
         .send()
         .await
